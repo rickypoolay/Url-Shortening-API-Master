@@ -88,6 +88,16 @@ section {
   text-decoration: none;
 }
 
+.copy-btn {
+  border: none;
+  border-radius: 5px;
+  background-color: #2dd2cd;
+  padding: .5em;
+  width: 100%;
+  color: white;
+  font-size: 1rem;
+}
+
 nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,13 +108,6 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.5em;
-}
-
-@media (min-width: 64em) {
-  nav {
-    padding: 2em 8em;
-  }
 }
 
 .mobile-container {
@@ -118,6 +121,7 @@ nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin: 1.5em;
 }
 
 .mobile-container .hamburger {
@@ -140,7 +144,8 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  max-width: 100em;
+  max-width: 95em;
+  padding: 2em 8em;
 }
 
 .desktop-container .nav-links {
@@ -178,27 +183,27 @@ nav {
 }
 
 .img-container {
+  width: 100%;
   overflow: hidden;
 }
 
 .img-container .working-img {
-  overflow: hidden;
-  width: 140%;
-  -webkit-transform: translateX(4%);
-          transform: translateX(4%);
+  width: 100%;
+  -webkit-transform: translateX(14%);
+          transform: translateX(14%);
 }
 
 @media (min-width: 64em) {
+  .img-container {
+    width: unset;
+    overflow: hidden;
+  }
   .img-container .working-img {
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-    width: 130%;
+    -webkit-transform: translateX(3%);
+            transform: translateX(3%);
+    width: 120%;
     min-width: 40em;
   }
-}
-
-.landing-contents {
-  max-width: 55em;
 }
 
 .landing-contents h1 {
@@ -215,15 +220,36 @@ nav {
 }
 
 @media (min-width: 64em) {
+  .landing-contents {
+    max-width: 40em;
+    margin-right: 1em;
+    width: 60em;
+  }
   .landing-contents button {
     -ms-flex-item-align: start;
         align-self: flex-start;
   }
   .landing-contents h1 {
-    font-size: 4rem;
+    font-size: 5rem;
+    max-lines: 3;
+    margin-bottom: 0;
   }
   .landing-contents p {
-    font-size: 2rem;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    font-size: 1.5rem;
+    max-width: 90%;
   }
+}
+
+#links-section {
+  background-color: #eff0f5;
+}
+
+.link-container {
+  background-color: white;
+  width: 100%;
+  padding: 1em;
+  border-radius: 5px;
 }
 /*# sourceMappingURL=style.css.map */
