@@ -77,7 +77,7 @@ section {
   cursor: pointer;
 }
 
-.get-started-btn:hover {
+.get-started-btn:hover, .get-started-btn :active {
   background-color: var(--hoverButton);
 }
 
@@ -98,7 +98,7 @@ section {
   color: var(--buttonText);
 }
 
-.signup-btn:hover {
+.signup-btn:hover, .signup-btn :active {
   background-color: var(--hoverButton);
 }
 
@@ -117,7 +117,7 @@ section {
   cursor: pointer;
 }
 
-.copy-btn:hover {
+.copy-btn:hover, .copy-btn :active {
   background-color: var(--hoverButton);
 }
 
@@ -140,7 +140,7 @@ section {
   cursor: pointer;
 }
 
-.shorten-btn:hover {
+.shorten-btn:hover, .shorten-btn :active {
   background-color: var(--hoverButton);
 }
 
@@ -216,7 +216,7 @@ nav {
   color: var(--paragraph);
 }
 
-.desktop-container .nav-link:hover {
+.desktop-container .nav-link:hover, .desktop-container .nav-link :active {
   color: var(--hoverNavLink);
 }
 

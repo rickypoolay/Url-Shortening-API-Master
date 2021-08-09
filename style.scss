@@ -104,7 +104,7 @@ section {
     background-color: var(--button);
     cursor: pointer;
 
-    &:hover {
+    &:hover,:active {
         background-color: var(--hoverButton);
     }
     @include breakpoint(laptop) {
@@ -122,7 +122,7 @@ section {
     background-color: var(--button);
     color: var(--buttonText);
 
-    &:hover {
+    &:hover,:active {
         background-color: var(--hoverButton);
     }
     a {
@@ -140,7 +140,7 @@ section {
     background-color: var(--button);
     cursor: pointer;
 
-    &:hover {
+    &:hover,:active {
         background-color: var(--hoverButton);
     }
     @include breakpoint(laptop) {
@@ -160,7 +160,7 @@ section {
     background-color: var(--button);
     cursor: pointer;
 
-    &:hover {
+    &:hover,:active {
         background-color: var(--hoverButton);
     }
     
@@ -222,7 +222,7 @@ nav {
         margin-right: 2em;
         color: var(--paragraph);
 
-        &:hover {
+        &:hover,:active {
             color:var(--hoverNavLink)
         }
 
