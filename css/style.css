@@ -216,6 +216,7 @@ nav {
     -webkit-transform: translateX(3%);
             transform: translateX(3%);
     width: 120%;
+    max-width: unset;
     min-width: 40em;
   }
 }
@@ -326,5 +327,112 @@ nav {
   .links-list-container .link-container .shortened-link {
     margin-left: 1em;
   }
+}
+
+#statistics-section {
+  background-color: #e6e6e6;
+  padding: 2em 0;
+}
+
+.statistics-content {
+  margin-bottom: 2em;
+}
+
+.statistics-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: .5em;
+}
+
+.statistics-content p {
+  font-size: 1.25rem;
+  max-width: 30em;
+  text-align: center;
+}
+
+.statistic-cards-container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3em;
+  max-width: 72.5rem;
+}
+
+.statistic-cards-container .statistic-card {
+  position: relative;
+  background-color: white;
+  padding: 1.5em;
+  border-radius: 7px;
+  height: auto;
+  max-height: 30em;
+}
+
+.statistic-cards-container .statistic-card img {
+  position: absolute;
+  background-color: #3b2b50;
+  border: solid 1em #3b2b50;
+  border-radius: 100%;
+  width: 5em;
+  top: -0.5em;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.statistic-cards-container .statistic-card h3 {
+  margin-bottom: 1em;
+  margin-top: 1.25em;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 64em) {
+  .statistic-cards-container {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    height: 20em;
+  }
+  .statistic-cards-container .statistic-card:nth-child(1) {
+    margin-bottom: auto;
+  }
+  .statistic-cards-container .statistic-card:nth-last-child(1) {
+    margin-top: auto;
+  }
+  .statistic-cards-container .statistic-card img {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%);
+    top: -2.5em;
+    left: 25px;
+  }
+}
+
+.line {
+  width: .60em;
+  height: 5em;
+  background-color: #2cd0d0;
+}
+
+@media (min-width: 64em) {
+  .line {
+    width: 5%;
+    min-width: 2%;
+    height: .6em;
+  }
+}
+
+#boost-section {
+  background-color: #3b2b50;
+}
+
+#boost-section h2 {
+  margin-bottom: 1em;
+}
+
+#boost-section .get-started-btn {
+  padding: .5em 1em;
 }
 /*# sourceMappingURL=style.css.map */

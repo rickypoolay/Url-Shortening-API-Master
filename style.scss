@@ -221,6 +221,7 @@ nav {
         .working-img {
         transform: translateX(3%);
         width: 120%;
+        max-width: unset;
         min-width: 40em;
         }
     }
@@ -332,5 +333,109 @@ nav {
                 margin-left:1em;
             }
         }
+    }
+}
+
+//Statistics Section
+
+#statistics-section {
+background-color: rgb(230, 230, 230);
+padding: 2em 0;
+}
+
+.statistics-content {
+    margin-bottom: 2em;
+
+    h2 {
+        font-size: 2.5rem;
+        margin-bottom: .5em;
+    }
+
+    p {
+        font-size: 1.25rem;
+        max-width: 30em;
+        text-align: center;
+    }
+}
+
+.statistic-cards-container {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3em;
+    max-width: $Desktop-MaxWidth;
+
+
+    .statistic-card {
+        position: relative;
+        background-color: white;
+        padding: 1.5em;
+        border-radius: 7px;
+        height: auto;
+        max-height: 30em;
+        
+        img {
+            position: absolute;
+            background-color: hsl(267,30%,24%);
+            border: solid 1em hsl(267,30%,24%);
+            border-radius: 100%;
+            width: 5em;
+            top: -0.5em;
+            left: 50%;
+            transform:translate(-50%,-50%);
+        }
+
+        h3 {
+            margin-bottom: 1em;
+            margin-top: 1.25em;
+            font-size: 1.5rem;
+        }
+    }
+
+    @include breakpoint(laptop) {
+        flex-direction: row;
+        height: 20em;
+
+        .statistic-card {
+
+            &:nth-child(1) {
+                margin-bottom: auto;
+            }
+            &:nth-last-child(1) {
+                margin-top: auto;
+            }
+
+            img {
+                transform: translateX(0%);
+                top: -2.5em;
+                left: 25px;
+            }
+        }
+
+    }
+}
+
+.line {
+    width: .60em;
+    height: 5em;
+    background-color: rgb(44,208,208);
+
+    @include breakpoint(laptop) {
+        width: 5%;
+        min-width:2%;
+        height: .6em;
+    }
+}
+
+//Boost your links Section CTA
+
+#boost-section {
+    background-color: hsl(267,30%,24%);
+
+    h2 {
+        margin-bottom: 1em;
+    }
+
+    .get-started-btn {
+        padding: .5em 1em;
     }
 }
