@@ -35,10 +35,22 @@
 
 //Variables
 
-$Mobile-spacing:1.5rem;
-$Desktop-spacing:8rem;
+$Mobile-spacing: 1.5rem;
+$Desktop-spacing: 8rem;
 $Desktop-MaxWidth: 94.5rem;
 
+:root {
+--red: hsl(0, 87%, 67%);
+--paragraph : rgb(39, 192, 192);
+--bg: hsl(257, 27%, 26%);
+--button : hsl(180,66%,49%);
+--hoverButton : hsl(180,54%,74%);
+--hoverNavLink : hsl(260, 8%, 14%);
+--middlesection: hsl(230,25%,95%);
+--footersection : hsl(260, 8%, 14%);
+--buttonText : white;
+--headers : hsl(260,15%,15%);
+}
 //Font Styles
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
 
@@ -88,7 +100,13 @@ section {
     padding: 1em 2.5em;
     font-size: 1.5rem;
     font-weight: 700;
+    color: var(--buttonText);
+    background-color: var(--button);
+    cursor: pointer;
 
+    &:hover {
+        background-color: var(--hoverButton);
+    }
     @include breakpoint(laptop) {
         padding: .5em 2em;
     }
@@ -100,7 +118,13 @@ section {
     padding: .5em 1.5em;
     font-size: 1em;
     font-weight: 700;
+    cursor: pointer;
+    background-color: var(--button);
+    color: var(--buttonText);
 
+    &:hover {
+        background-color: var(--hoverButton);
+    }
     a {
         text-decoration: none;
     }
@@ -109,12 +133,16 @@ section {
 .copy-btn {
     border:none;
     border-radius: 5px;
-    background-color: hsl(178,65%,50%);
     padding: .5em;
     width: 100%;
-    color:white;
+    color:var(--buttonText);
     font-size: 1rem;
+    background-color: var(--button);
+    cursor: pointer;
 
+    &:hover {
+        background-color: var(--hoverButton);
+    }
     @include breakpoint(laptop) {
         text-align: center;
         max-width: 6em;
@@ -127,8 +155,15 @@ section {
     background-color: hsl(178,65%,50%);
     padding: .5em;
     width: 100%;
-    color:white;
+    color:var(--buttonText);
     font-size: 1rem;
+    background-color: var(--button);
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--hoverButton);
+    }
+    
 }
 
 //Navbars
@@ -185,6 +220,11 @@ nav {
         font-size: 1em;
         font-weight: 700;
         margin-right: 2em;
+        color: var(--paragraph);
+
+        &:hover {
+            color:var(--hoverNavLink)
+        }
 
             //Margin Positioning with 'Login' Link, Margin-left: auto moves all right-side items to the right
 
@@ -244,13 +284,14 @@ nav {
         font-weight: 700;
         margin-bottom: .25em;
         width: 100%;
-        
+        color: var(--headers);
     }
 
     p {
         font-size: 1.15rem;
         margin-bottom: 2em;
         width: 100%;
+        color:var(--paragraph);
     }
 
     
@@ -280,7 +321,7 @@ nav {
 
 //Link Shortener Section
 #shortener-section {
-    background: linear-gradient(white 50%,hsl(230,25%,95%) 50%);
+    background: linear-gradient(white 50%,var(--middlesection) 50%);
 }
 
 .section-container {
@@ -299,7 +340,7 @@ nav {
 }
 
 .shortener-container {
-    background-color: hsl(257,26%,25%);
+    background-color: var(--bg);
     background-image: url('../images/bg-shorten-mobile.svg');
     background-repeat: no-repeat;
     background-position:top right;
@@ -320,7 +361,7 @@ nav {
         text-align: left;
 
         &::placeholder {
-            color: rgb(160, 160, 160);
+            color: var(--paragraph);
             font-weight: 300;
             text-align: left;
         }
@@ -361,7 +402,7 @@ nav {
 // Links Section
 
 #links-section {
-    background-color: hsl(230,25%,95%);
+    background-color: var(--middlesection);
 }
 
 //Grouped All Converted Links Container
@@ -399,12 +440,17 @@ nav {
             overflow:auto;
             border-bottom: solid 1px black;
         }
+
+        .shortened-link {
+            color: var(--paragraph);
+        }
     }
 
     @include breakpoint(laptop) {
         width: 100%;
         padding:0 8em;
         max-width: 94.5em;
+        margin-bottom: 1em;
 
             
         .link-container {
@@ -434,32 +480,43 @@ nav {
 
 //Section itself
 #statistics-section {
-background-color: rgb(230, 230, 230);
-padding: 2em 0;
+background-color: var(--middlesection);
 }
 
 //Statistic Text Content
 .statistics-content {
-    margin-bottom: 2em;
+    margin: 2em;
 
     h2 {
         font-size: 1.6rem;
         margin-bottom: .5em;
+        color: var(--headers);
     }
 
     p {
         font-size: 1rem;
         max-width: 30em;
         text-align: center;
+        color: var(--paragraph);
+    }
+
+    @include breakpoint(laptop) {
+        h2 {
+            font-size: 2rem;
+        }
+
+        p{
+            font-size: 1rem;
+        }
     }
 }
 
 //Statsticic Cards Container 
 .statistic-cards-container {
+    width: 85%;
     flex-direction: column;
     align-items: center;
     margin-top: 3em;
-    max-width: 79em;
 
     //Individual Card
     .statistic-card {
@@ -472,8 +529,8 @@ padding: 2em 0;
         
         img {
             position: absolute;
-            background-color: hsl(267,30%,24%);
-            border: solid 1em hsl(267,30%,24%);
+            background-color: var(--bg);
+            padding: 1em;
             border-radius: 100%;
             width: 5em;
             top: -0.5em;
@@ -485,12 +542,18 @@ padding: 2em 0;
             margin-bottom: 1em;
             margin-top: 1.25em;
             font-size: 1.5rem;
+            color: var(--headers);
+        }
+
+        p {
+            color: var(--paragraph);
         }
     }
 
     @include breakpoint(laptop) {
         flex-direction: row;
         height: 20em;
+        max-width: 79em;
 
         .statistic-card {
 
@@ -507,7 +570,6 @@ padding: 2em 0;
                 left: 25px;
             }
         }
-
     }
 }
 
@@ -515,7 +577,7 @@ padding: 2em 0;
 .line {
     width: .60em;
     height: 5em;
-    background-color: rgb(44,208,208);
+    background-color: var(--button);
 
     @include breakpoint(laptop) {
         width: 5%;
@@ -526,7 +588,7 @@ padding: 2em 0;
 
 //Boost your links Section CTA
 #boost-section {
-    background-color: hsl(267,30%,24%);
+    background-color: var(--bg);
     background-image: url('../images/bg-boost-mobile.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -536,6 +598,7 @@ padding: 2em 0;
     .boost-container {
         h2 {
             margin-bottom: 1em;
+            color:white;
         }
     
         .get-started-btn {
@@ -560,7 +623,7 @@ padding: 2em 0;
 //Footer Section
 
 #footer {
-    background-color: hsl(265,9%,13%);
+    background-color: var(--footersection);
     padding:2em 0;
 
     @include breakpoint(laptop) {
@@ -583,9 +646,18 @@ padding: 2em 0;
         align-items: center;
         flex-direction: column;
         margin-bottom: 1.5em;
+        text-align: left;
 
         p {
+            width: 100%;
             margin-bottom: .75em;
+            color:white;
+        }
+
+        a {
+            width: 100%;
+            text-decoration: none;
+            color: var(--paragraph);
         }
     }
 

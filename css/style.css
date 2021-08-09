@@ -1,4 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+:root {
+  --red: hsl(0, 87%, 67%);
+  --paragraph: rgb(39, 192, 192);
+  --bg: hsl(257, 27%, 26%);
+  --button: hsl(180,66%,49%);
+  --hoverButton: hsl(180,54%,74%);
+  --hoverNavLink: hsl(260, 8%, 14%);
+  --middlesection: hsl(230,25%,95%);
+  --footersection: hsl(260, 8%, 14%);
+  --buttonText: white;
+  --headers: hsl(260,15%,15%);
+}
+
 *, html, body, ::after, ::before {
   padding: 0;
   margin: 0;
@@ -59,6 +72,13 @@ section {
   padding: 1em 2.5em;
   font-size: 1.5rem;
   font-weight: 700;
+  color: var(--buttonText);
+  background-color: var(--button);
+  cursor: pointer;
+}
+
+.get-started-btn:hover {
+  background-color: var(--hoverButton);
 }
 
 @media (min-width: 64em) {
@@ -73,6 +93,13 @@ section {
   padding: .5em 1.5em;
   font-size: 1em;
   font-weight: 700;
+  cursor: pointer;
+  background-color: var(--button);
+  color: var(--buttonText);
+}
+
+.signup-btn:hover {
+  background-color: var(--hoverButton);
 }
 
 .signup-btn a {
@@ -82,11 +109,16 @@ section {
 .copy-btn {
   border: none;
   border-radius: 5px;
-  background-color: #2dd2cd;
   padding: .5em;
   width: 100%;
-  color: white;
+  color: var(--buttonText);
   font-size: 1rem;
+  background-color: var(--button);
+  cursor: pointer;
+}
+
+.copy-btn:hover {
+  background-color: var(--hoverButton);
 }
 
 @media (min-width: 64em) {
@@ -102,8 +134,14 @@ section {
   background-color: #2dd2cd;
   padding: .5em;
   width: 100%;
-  color: white;
+  color: var(--buttonText);
   font-size: 1rem;
+  background-color: var(--button);
+  cursor: pointer;
+}
+
+.shorten-btn:hover {
+  background-color: var(--hoverButton);
 }
 
 nav {
@@ -175,6 +213,11 @@ nav {
   font-size: 1em;
   font-weight: 700;
   margin-right: 2em;
+  color: var(--paragraph);
+}
+
+.desktop-container .nav-link:hover {
+  color: var(--hoverNavLink);
 }
 
 .desktop-container .nav-link:nth-last-child(2) {
@@ -234,12 +277,14 @@ nav {
   font-weight: 700;
   margin-bottom: .25em;
   width: 100%;
+  color: var(--headers);
 }
 
 .landing-contents p {
   font-size: 1.15rem;
   margin-bottom: 2em;
   width: 100%;
+  color: var(--paragraph);
 }
 
 @media (min-width: 64em) {
@@ -266,8 +311,8 @@ nav {
 }
 
 #shortener-section {
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), color-stop(50%, #eff0f5));
-  background: linear-gradient(white 50%, #eff0f5 50%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), color-stop(50%, var(--middlesection)));
+  background: linear-gradient(white 50%, var(--middlesection) 50%);
 }
 
 .section-container {
@@ -293,7 +338,7 @@ nav {
 }
 
 .shortener-container {
-  background-color: #392f50;
+  background-color: var(--bg);
   background-image: url("../images/bg-shorten-mobile.svg");
   background-repeat: no-repeat;
   background-position: top right;
@@ -316,25 +361,25 @@ nav {
 }
 
 .shortener-container .user-input::-webkit-input-placeholder {
-  color: #a0a0a0;
+  color: var(--paragraph);
   font-weight: 300;
   text-align: left;
 }
 
 .shortener-container .user-input:-ms-input-placeholder {
-  color: #a0a0a0;
+  color: var(--paragraph);
   font-weight: 300;
   text-align: left;
 }
 
 .shortener-container .user-input::-ms-input-placeholder {
-  color: #a0a0a0;
+  color: var(--paragraph);
   font-weight: 300;
   text-align: left;
 }
 
 .shortener-container .user-input::placeholder {
-  color: #a0a0a0;
+  color: var(--paragraph);
   font-weight: 300;
   text-align: left;
 }
@@ -380,7 +425,7 @@ nav {
 }
 
 #links-section {
-  background-color: #eff0f5;
+  background-color: var(--middlesection);
 }
 
 .links-list-container {
@@ -426,11 +471,16 @@ nav {
   border-bottom: solid 1px black;
 }
 
+.links-list-container .link-container .shortened-link {
+  color: var(--paragraph);
+}
+
 @media (min-width: 64em) {
   .links-list-container {
     width: 100%;
     padding: 0 8em;
     max-width: 94.5em;
+    margin-bottom: 1em;
   }
   .links-list-container .link-container {
     -webkit-box-orient: horizontal;
@@ -455,26 +505,37 @@ nav {
 }
 
 #statistics-section {
-  background-color: #e6e6e6;
-  padding: 2em 0;
+  background-color: var(--middlesection);
 }
 
 .statistics-content {
-  margin-bottom: 2em;
+  margin: 2em;
 }
 
 .statistics-content h2 {
   font-size: 1.6rem;
   margin-bottom: .5em;
+  color: var(--headers);
 }
 
 .statistics-content p {
   font-size: 1rem;
   max-width: 30em;
   text-align: center;
+  color: var(--paragraph);
+}
+
+@media (min-width: 64em) {
+  .statistics-content h2 {
+    font-size: 2rem;
+  }
+  .statistics-content p {
+    font-size: 1rem;
+  }
 }
 
 .statistic-cards-container {
+  width: 85%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -483,7 +544,6 @@ nav {
       -ms-flex-align: center;
           align-items: center;
   margin-top: 3em;
-  max-width: 79em;
 }
 
 .statistic-cards-container .statistic-card {
@@ -497,8 +557,8 @@ nav {
 
 .statistic-cards-container .statistic-card img {
   position: absolute;
-  background-color: #3b2b50;
-  border: solid 1em #3b2b50;
+  background-color: var(--bg);
+  padding: 1em;
   border-radius: 100%;
   width: 5em;
   top: -0.5em;
@@ -511,6 +571,11 @@ nav {
   margin-bottom: 1em;
   margin-top: 1.25em;
   font-size: 1.5rem;
+  color: var(--headers);
+}
+
+.statistic-cards-container .statistic-card p {
+  color: var(--paragraph);
 }
 
 @media (min-width: 64em) {
@@ -520,6 +585,7 @@ nav {
         -ms-flex-direction: row;
             flex-direction: row;
     height: 20em;
+    max-width: 79em;
   }
   .statistic-cards-container .statistic-card:nth-child(1) {
     margin-bottom: auto;
@@ -538,7 +604,7 @@ nav {
 .line {
   width: .60em;
   height: 5em;
-  background-color: #2cd0d0;
+  background-color: var(--button);
 }
 
 @media (min-width: 64em) {
@@ -550,7 +616,7 @@ nav {
 }
 
 #boost-section {
-  background-color: #3b2b50;
+  background-color: var(--bg);
   background-image: url("../images/bg-boost-mobile.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -559,6 +625,7 @@ nav {
 
 #boost-section .boost-container h2 {
   margin-bottom: 1em;
+  color: white;
 }
 
 #boost-section .boost-container .get-started-btn {
@@ -579,7 +646,7 @@ nav {
 }
 
 #footer {
-  background-color: #211e24;
+  background-color: var(--footersection);
   padding: 2em 0;
 }
 
@@ -620,10 +687,19 @@ nav {
       -ms-flex-direction: column;
           flex-direction: column;
   margin-bottom: 1.5em;
+  text-align: left;
 }
 
 .footer-container .footer-links p {
+  width: 100%;
   margin-bottom: .75em;
+  color: white;
+}
+
+.footer-container .footer-links a {
+  width: 100%;
+  text-decoration: none;
+  color: var(--paragraph);
 }
 
 .footer-container .socials-container {
