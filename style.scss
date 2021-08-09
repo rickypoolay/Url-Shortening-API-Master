@@ -37,7 +37,7 @@
 
 $Mobile-spacing:1.5rem;
 $Desktop-spacing:8rem;
-$Desktop-MaxWidth: 77.5rem;
+$Desktop-MaxWidth: 94.5rem;
 
 //Font Styles
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
@@ -76,7 +76,7 @@ section {
 
     @include breakpoint(laptop) {
         margin: $Desktop-spacing;
-        max-width: 80%;
+
     }
 }
 
@@ -121,6 +121,16 @@ section {
     }
 }
 
+.shorten-btn {
+    border:none;
+    border-radius: 5px;
+    background-color: hsl(178,65%,50%);
+    padding: .5em;
+    width: 100%;
+    color:white;
+    font-size: 1rem;
+}
+
 //Navbars
 
     //Mobile NavBar
@@ -155,8 +165,7 @@ nav {
     align-items: center;
     width: 100%;
     max-width: $Desktop-MaxWidth;
-    padding: 2em 0;
-    margin: 0 $Desktop-spacing;
+    padding: 2em $Desktop-spacing;
 
 
         //Navbar Links Container
@@ -194,7 +203,7 @@ nav {
 //Landing Section
 
 #landing-section {
-    padding-bottom: 5em;
+    padding-bottom: 2em;
 
     @include breakpoint(laptop) {
         flex-direction: row-reverse;
@@ -227,9 +236,9 @@ nav {
     }
 }
 
+//Landing Text Content
 .landing-contents {
 
-    
     h1 {
         font-size: 2.5rem;
         font-weight: 700;
@@ -269,17 +278,59 @@ nav {
     }
 }
 
+//Link Shortener Section
+#shortener-section {
+    background: linear-gradient(white 50%,hsl(230,25%,95%) 50%);
+}
+
+.shortener-container {
+    background-color: hsl(257,26%,25%);
+    background-image: url('../images/bg-shorten-mobile.svg');
+    background-repeat: no-repeat;
+    background-position:top right;
+    margin-bottom: .5em;
+    width: 85%;
+    padding: $Mobile-spacing;
+    border-radius: 10px;
+
+    .user-input {
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 300;
+        border-radius: 5px;
+        padding: .5em .25em;
+        margin-bottom: 1em;
+        border:0;
+        outline: none;
+
+        &::placeholder {
+            color: rgb(160, 160, 160);
+            font-weight: 300;
+            text-align: left;
+            padding: 1em;
+        }
+    }
+
+    button {
+        text-align: center;
+    }
+
+    @include breakpoint(laptop) {
+        max-width: 78.5em;
+    }
+}
+
 // Links Section
 
 #links-section {
     background-color: hsl(230,25%,95%);
-    padding-top: 5em;
-
 }
 
 //Grouped All Converted Links Container
 .links-list-container {
     width: 85%;
+    margin-top: 1em;
+    
     
 
     //Each Indiviual Converted Link Container
@@ -314,10 +365,13 @@ nav {
 
     @include breakpoint(laptop) {
         width: 100%;
-        max-width: $Desktop-MaxWidth;
+        padding:0 8em;
+        max-width: 94.5em;
+
             
         .link-container {
             flex-direction: row;
+            margin-top:1em;
 
             .shortened-link,
             .original-link {
@@ -340,33 +394,36 @@ nav {
 
 //Statistics Section
 
+//Section itself
 #statistics-section {
 background-color: rgb(230, 230, 230);
 padding: 2em 0;
 }
 
+//Statistic Text Content
 .statistics-content {
     margin-bottom: 2em;
 
     h2 {
-        font-size: 2.5rem;
+        font-size: 1.6rem;
         margin-bottom: .5em;
     }
 
     p {
-        font-size: 1.25rem;
+        font-size: 1rem;
         max-width: 30em;
         text-align: center;
     }
 }
 
+//Statsticic Cards Container 
 .statistic-cards-container {
     flex-direction: column;
     align-items: center;
     margin-top: 3em;
-    max-width: $Desktop-MaxWidth;
+    max-width: 79em;
 
-
+    //Individual Card
     .statistic-card {
         position: relative;
         background-color: white;
@@ -416,6 +473,7 @@ padding: 2em 0;
     }
 }
 
+//Line between statistic cards
 .line {
     width: .60em;
     height: 5em;
@@ -429,15 +487,99 @@ padding: 2em 0;
 }
 
 //Boost your links Section CTA
-
 #boost-section {
     background-color: hsl(267,30%,24%);
+    background-image: url('../images/bg-boost-mobile.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4em 0;
 
-    h2 {
-        margin-bottom: 1em;
+    //Container of Text and button
+    .boost-container {
+        h2 {
+            margin-bottom: 1em;
+        }
+    
+        .get-started-btn {
+            padding: .5em 1.75em;
+        }
     }
 
-    .get-started-btn {
-        padding: .5em 1em;
+    @include breakpoint(laptop) {
+        background-image: url('../images/bg-boost-desktop.svg');
+        padding:0;
+        
+        .boost-container {
+            margin: 3em;
+
+            h2 {
+                font-size: 2.5rem;
+            }
+        }
+    }
+}
+
+//Footer Section
+
+#footer {
+    background-color: hsl(265,9%,13%);
+    padding:2em 0;
+
+    @include breakpoint(laptop) {
+        padding:0em;
+    }
+}
+
+.footer-container {
+    display:flex;
+    flex-direction: column;
+
+    .logo {
+        margin-bottom: 2em;
+        filter: brightness(1000%);
+    }
+
+    .footer-links {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 1.5em;
+
+        p {
+            margin-bottom: .75em;
+        }
+    }
+
+    .socials-container {
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+
+        width: 10em;
+    }
+
+    @include breakpoint(laptop) {
+        flex-direction: row;
+        align-items: start;
+        width: 100%;
+        padding: 0 $Desktop-spacing;
+        max-width: $Desktop-MaxWidth;
+
+        .logo {
+            margin-right:auto;
+            margin-bottom: 0;
+        }
+
+        .socials-container {
+            margin-left:10%;
+        }
+        
+        .footer-links {
+            margin-right: 5em;
+            &:nth-last-child(2) {
+                margin-right: 0;
+            }
+        }
     }
 }
