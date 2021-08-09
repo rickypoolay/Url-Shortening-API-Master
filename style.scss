@@ -37,7 +37,7 @@
 
 $Mobile-spacing:1.5rem;
 $Desktop-spacing:8rem;
-$Desktop-MaxWidth: 72.5rem;
+$Desktop-MaxWidth: 77.5rem;
 
 //Font Styles
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap');
@@ -221,7 +221,7 @@ nav {
         .working-img {
         transform: translateX(3%);
         width: 120%;
-        max-width: unset;
+        max-width: 120%;
         min-width: 40em;
         }
     }
@@ -280,6 +280,7 @@ nav {
 //Grouped All Converted Links Container
 .links-list-container {
     width: 85%;
+    
 
     //Each Indiviual Converted Link Container
     .link-container {
@@ -312,7 +313,8 @@ nav {
     }
 
     @include breakpoint(laptop) {
-        width: 72.5em;
+        width: 100%;
+        max-width: $Desktop-MaxWidth;
             
         .link-container {
             flex-direction: row;
