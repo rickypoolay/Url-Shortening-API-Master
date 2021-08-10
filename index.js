@@ -15,7 +15,4 @@ $(function () {
 
         //Remove Hamburger if blured background is clicked
     $('.bg').click(navToggle);
-
-
-
 });
