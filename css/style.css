@@ -173,10 +173,111 @@ nav {
 .mobile-container .hamburger {
   width: 1.5em;
   height: 1.5em;
+  cursor: pointer;
 }
 
 @media (min-width: 64em) {
   .mobile-container {
+    display: none;
+  }
+}
+
+.nav-dropdown {
+  position: fixed;
+  top: 0em;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.nav-dropdown .logo-hamburger {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 1.5em 1.5em;
+  background-color: white;
+}
+
+.nav-dropdown .logo-hamburger .hamburger {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.nav-dropdown .bg {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.651);
+  -webkit-backdrop-filter: blur(1.5px);
+          backdrop-filter: blur(1.5px);
+  z-index: -2;
+}
+
+.nav-dropdown .dropdown-links {
+  border-top: 2px solid var(--paragraph);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 18em;
+  background-color: white;
+}
+
+.nav-dropdown .dropdown-links span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: 2px solid var(--paragraph);
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.nav-dropdown .dropdown-links span .dropdown-link {
+  border-bottom: none;
+  width: 100%;
+}
+
+.nav-dropdown .dropdown-links span .dropdown-link:first-child {
+  border-right: 2px solid var(--paragraph);
+}
+
+.nav-dropdown .dropdown-links .dropdown-link {
+  border-bottom: 2px solid var(--paragraph);
+  font-size: 1.25rem;
+  padding: 1em 2em;
+  text-decoration: none;
+  color: var(--headers);
+}
+
+@media (min-width: 64em) {
+  .nav-dropdown {
     display: none;
   }
 }
@@ -431,6 +532,10 @@ nav {
 .links-list-container {
   width: 85%;
   margin-top: 1em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: column-reverse;
+          flex-direction: column-reverse;
 }
 
 .links-list-container .link-container {
