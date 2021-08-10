@@ -559,7 +559,7 @@ nav {
   margin-bottom: 1.75em;
 }
 
-.links-list-container .link-container:nth-last-child(1) {
+.links-list-container .link-container:first-child {
   margin-bottom: 0;
 }
 
