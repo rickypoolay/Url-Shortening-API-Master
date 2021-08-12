@@ -543,6 +543,7 @@ nav {
 
         .shortened-link {
             color: var(--paragraph);
+            cursor: pointer;
             &:focus {
                 outline: none;
             }
