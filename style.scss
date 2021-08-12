@@ -533,15 +533,19 @@ nav {
             padding: .5em;
             text-align: left;
             width: 100%;
+            border: none;
         }
     
         .original-link {
             overflow:auto;
-            border-bottom: solid 1px black;
+            border-bottom: solid 1px var(--paragraph);
         }
 
         .shortened-link {
             color: var(--paragraph);
+            &:focus {
+                outline: none;
+            }
         }
     }
 
@@ -562,6 +566,7 @@ nav {
                 width: auto;
             }
 
+
             .original-link {
                 border-bottom: none;
                 margin-right: auto;
@@ -570,6 +575,8 @@ nav {
 
             .shortened-link {
                 margin-left:1em;
+                width: 30%;
+                text-align: right;
             }
         }
     }

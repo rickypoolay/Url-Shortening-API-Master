@@ -586,15 +586,20 @@ nav {
   padding: .5em;
   text-align: left;
   width: 100%;
+  border: none;
 }
 
 .links-list-container .link-container .original-link {
   overflow: auto;
-  border-bottom: solid 1px black;
+  border-bottom: solid 1px var(--paragraph);
 }
 
 .links-list-container .link-container .shortened-link {
   color: var(--paragraph);
+}
+
+.links-list-container .link-container .shortened-link:focus {
+  outline: none;
 }
 
 @media (min-width: 64em) {
@@ -623,6 +628,8 @@ nav {
   }
   .links-list-container .link-container .shortened-link {
     margin-left: 1em;
+    width: 30%;
+    text-align: right;
   }
 }
 
