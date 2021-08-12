@@ -447,6 +447,15 @@ nav {
   width: 100%;
   padding: 1.5rem;
   border-radius: 15px;
+  position: relative;
+}
+
+.shortener-container p {
+  display: none;
+  text-align: left;
+  color: var(--red);
+  font-style: italic;
+  font-size: .75rem;
 }
 
 .shortener-container .user-input {
@@ -455,7 +464,7 @@ nav {
   font-weight: 300;
   border-radius: 5px;
   padding: .5em .75em;
-  margin-bottom: 1em;
+  margin-bottom: .5em;
   border: 0;
   outline: none;
   text-align: left;
@@ -488,6 +497,7 @@ nav {
 .shortener-container button {
   text-align: center;
   border-radius: 5px;
+  margin-top: 1.25em;
 }
 
 @media (min-width: 64em) {
@@ -510,6 +520,18 @@ nav {
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  .shortener-container p {
+    position: absolute;
+    bottom: 2em;
+    left: 4em;
+    font-size: 1rem;
+  }
+  .shortener-container button {
+    width: 8em;
+    font-size: 1.5rem;
+    padding: .75em .5em;
+    margin-top: 0;
+  }
   .shortener-container .user-input {
     margin-bottom: 0;
     width: 80%;
@@ -517,11 +539,6 @@ nav {
     font-size: 1.5rem;
     padding: .75em .5em;
     padding-left: 1.5em;
-  }
-  .shortener-container button {
-    width: 8em;
-    font-size: 1.5rem;
-    padding: .75em .5em;
   }
 }
 
@@ -613,6 +630,12 @@ nav {
   background-color: var(--middlesection);
 }
 
+@media (min-width: 64em) {
+  #statistics-section {
+    padding: 0 8rem;
+  }
+}
+
 .statistics-content {
   margin: 2em;
 }
@@ -691,6 +714,8 @@ nav {
             flex-direction: row;
     height: 20em;
     max-width: 79em;
+    width: 100%;
+    margin: inherit 8rem;
   }
   .statistic-cards-container .statistic-card:nth-child(1) {
     margin-bottom: auto;
