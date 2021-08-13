@@ -9,8 +9,6 @@ console.log('youtube.com');
         $('.nav-dropdown').slideToggle(200)
     }
 
-    
-
     function generateShortLink () {
         //Set button to display ' Shortening... '
         $('.shorten-btn').text('Shortening...');
@@ -35,7 +33,6 @@ console.log('youtube.com');
             //If an error is throw add a notification to user for a correct link.
             $('.shortener-container p').toggle();
             $('.user-input').css('border', '5px solid var(--red)');
-            
         } else {
             
                 //Reset If Incorrect field to normal
@@ -50,7 +47,6 @@ console.log('youtube.com');
         // .then((shortLink) => generateHTML(shortLink.result))
         .then((shortLink) => generateHTML(shortLink.result));
 
-        
         //Create the Shortened Link To Screen
         const generateHTML = (shortLink) => {
 
@@ -96,35 +92,18 @@ console.log('youtube.com');
                 document.execCommand('copy');
                 tempInputSelection.remove();
                 
-        
+                //Setting the button to display that it was copied.
                 $(createCopyBtn).text('Copied!');
                 $(createCopyBtn).css('background-color' , 'var(--bg)');
             }
-
 
             //Add eventlistener to copy shortened link
             createCopyBtn.addEventListener('click', copyShortenedLInk);
             createShortenedLink.addEventListener('click', copyShortenedLInk);
 
-            
-
-            
-
-            // const html = 
-            // `
-            // <div class='link-container link${linksCounter}'>
-            // <p class='original-link'>${userInput}</p>
-            // <p class='shortened-link'>${shortenedLink}</p>
-            // <button class='copy-btn'>Copy</button>
-            // </div>
-            // `
-            //Add Html to Container
-            // $('.links-list-container').append(html);
-
             //Reset Button Text
             $('.shorten-btn').text('Shorten It!');
         }
-
     }
 
 //Eventlisteners
