@@ -1,14 +1,17 @@
 $(function () {
-let linksCounter = 0;
+console.log('youtube.com');
+
 
 //Functions
 
     //Toggle NavBar Visiblity
-    const navToggle = function () {
+    function navToggle () {
         $('.nav-dropdown').slideToggle(200)
     }
 
-    const generateShortLink = function () {
+    
+
+    function generateShortLink () {
         //Set button to display ' Shortening... '
         $('.shorten-btn').text('Shortening...');
 
@@ -32,12 +35,14 @@ let linksCounter = 0;
             //If an error is throw add a notification to user for a correct link.
             $('.shortener-container p').toggle();
             $('.user-input').css('border', '5px solid var(--red)');
+            
         } else {
             
                 //Reset If Incorrect field to normal
                 $('.shortener-container p').hide();
                 $('.user-input').css('border', 'none');
                 $('.shorten-btn').text('Shortening...');
+                $('.user-input').val('');
                 return data.json()
             }
         })
@@ -48,8 +53,6 @@ let linksCounter = 0;
         
         //Create the Shortened Link To Screen
         const generateHTML = (shortLink) => {
-            linksCounter++
-
 
             //Shortened link
             const shortenedLink = shortLink.short_link;
@@ -70,10 +73,9 @@ let linksCounter = 0;
             createDiv.append(createUserInput);
             
             //Add Shortened link
-            const createShortenedLink = document.createElement('input');
+            const createShortenedLink = document.createElement('p');
             createShortenedLink.classList.add('shortened-link');
-            createShortenedLink.setAttribute('readonly', '');
-            createShortenedLink.value = shortenedLink;
+            createShortenedLink.innerText = shortenedLink;
             createDiv.append(createShortenedLink);
 
             //Add Copy Button
@@ -82,14 +84,27 @@ let linksCounter = 0;
             createCopyBtn.innerText = 'Copy';
             createDiv.append(createCopyBtn);
 
-            createCopyBtn.addEventListener('click', () => {
-                createShortenedLink.select();
-                createShortenedLink.setSelectionRange(0, 99999);
-                document.execCommand('copy');
+            //Functions 
 
+            function copyShortenedLInk () {
+                const tempInputSelection = document.createElement('input');
+                tempInputSelection.classList.add('tempSelection');
+                tempInputSelection.value = shortenedLink;
+                $("body").append(tempInputSelection);
+                tempInputSelection.select();
+                tempInputSelection.setSelectionRange(0, 99999);
+                document.execCommand('copy');
+                tempInputSelection.remove();
+                
+        
                 $(createCopyBtn).text('Copied!');
                 $(createCopyBtn).css('background-color' , 'var(--bg)');
-            }) 
+            }
+
+
+            //Add eventlistener to copy shortened link
+            createCopyBtn.addEventListener('click', copyShortenedLInk);
+            createShortenedLink.addEventListener('click', copyShortenedLInk);
 
             
 

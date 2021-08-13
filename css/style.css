@@ -596,6 +596,7 @@ nav {
 
 .links-list-container .link-container .shortened-link {
   color: var(--paragraph);
+  cursor: pointer;
 }
 
 .links-list-container .link-container .shortened-link:focus {
