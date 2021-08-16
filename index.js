@@ -103,7 +103,21 @@ console.log('youtube.com');
 
             //Reset Button Text
             $('.shorten-btn').text('Shorten It!');
+
+            const linksObj = {
+                userInput: userInput,
+                shortenedLink: shortenedLink
+            }
+
+            const linksObj_serialized = JSON.stringify(linksObj);
+
+            localStorage.setItem('shortenedLink', linksObj_serialized);
+            console.log(localStorage);
+            
+
         }
+
+
     }
 
 //Eventlisteners
