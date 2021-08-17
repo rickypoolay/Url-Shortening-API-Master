@@ -1,6 +1,15 @@
 $(function () {
 console.log('youtube.com');
 
+//Delete \/
+
+function linkObj(original,shortened) {
+    this.original = original;
+    this.shortened = shortened;
+};
+
+const link1 = new linkObj('hi','hello');
+const link2 = new linkObj('bye','goodbye');
 
 //Functions
 
@@ -104,15 +113,21 @@ console.log('youtube.com');
             //Reset Button Text
             $('.shorten-btn').text('Shorten It!');
 
-            const linksObj = {
-                userInput: userInput,
-                shortenedLink: shortenedLink
-            }
+            // function linksObj = {
+            //     userInput: userInput,
+            //     shortenedLink: shortenedLink
+            // }
 
-            const linksObj_serialized = JSON.stringify(linksObj);
+            // const linksObj_serialized = function linksObj = {
+            //     userInput: userInput,
+            //     shortenedLink: shortenedLink
+            // }
+            
+            // JSON.stringify(linksObj);
 
-            localStorage.setItem('shortenedLink', linksObj_serialized);
-            console.log(localStorage);
+            
+            // localStorage.setItem('shortenedLink', linksObj_serialized);
+            // console.log(localStorage);
             
 
         }
