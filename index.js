@@ -1,15 +1,17 @@
 $(function () {
 console.log('youtube.com');
 
-//Delete \/
+//Delete!! Trying to figure out localStorage here{
 
-function linkObj(original,shortened) {
-    this.original = original;
-    this.shortened = shortened;
-};
+// function linkObj(original,shortened) {
+//     this.original = original;
+//     this.shortened = shortened;
+// };
 
-const link1 = new linkObj('hi','hello');
-const link2 = new linkObj('bye','goodbye');
+// const link1 = new linkObj('hi','hello');
+// const link2 = new linkObj('bye','goodbye');
+
+//}
 
 //Functions
 
@@ -113,6 +115,8 @@ const link2 = new linkObj('bye','goodbye');
             //Reset Button Text
             $('.shorten-btn').text('Shorten It!');
 
+            //  Trying to figure out how to locally store previous saved links
+
             // function linksObj = {
             //     userInput: userInput,
             //     shortenedLink: shortenedLink
@@ -128,11 +132,8 @@ const link2 = new linkObj('bye','goodbye');
             
             // localStorage.setItem('shortenedLink', linksObj_serialized);
             // console.log(localStorage);
-            
 
         }
-
-
     }
 
 //Eventlisteners
